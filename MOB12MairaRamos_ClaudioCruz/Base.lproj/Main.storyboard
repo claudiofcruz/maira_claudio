@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="YbV-if-ixc">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Ajustes-->
+        <scene sceneID="UDQ-Cu-ZMh">
+            <objects>
+                <viewController id="mzk-KH-LIQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Hbp-aA-rl0"/>
+                        <viewControllerLayoutGuide type="bottom" id="rIz-N1-FVf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hLe-6R-jgI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Ajustes" image="settings.png" selectedImage="settings.png" id="lGH-i8-nzQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eWi-oK-1gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="769" y="-1217"/>
+        </scene>
+        <!--Lista de Comras-->
+        <scene sceneID="ODh-bM-yCa">
+            <objects>
+                <tableViewController title="Lista de Comras" id="1OI-l7-Wfu" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Aql-ie-fIP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="QfG-mk-TPy">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QfG-mk-TPy" id="bjm-lu-fpK">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="1OI-l7-Wfu" id="Ajz-tY-ifC"/>
+                            <outlet property="delegate" destination="1OI-l7-Wfu" id="azc-0A-cSP"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="3Jg-X1-7yT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="j4A-6h-mSi">
+                            <connections>
+                                <segue destination="rmQ-ua-c7u" kind="show" id="AHy-0Q-CuS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xfY-oa-ssq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1770" y="-502"/>
+        </scene>
+        <!--Cadastrar Produto-->
+        <scene sceneID="x9X-bh-OhN">
+            <objects>
+                <viewController title="Cadastrar Produto" id="rmQ-ua-c7u" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HXv-80-vcG"/>
+                        <viewControllerLayoutGuide type="bottom" id="diw-dh-CNg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cfT-ex-XdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gaA-Zc-tpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1769" y="284"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="jZR-MT-kkv">
+            <objects>
+                <tabBarController id="YbV-if-ixc" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="j9i-Im-HUq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="ftp-xG-FnW" kind="relationship" relationship="viewControllers" id="lUe-hR-Gwn"/>
+                        <segue destination="mzk-KH-LIQ" kind="relationship" relationship="viewControllers" id="sfm-oX-KLs"/>
+                        <segue destination="AZj-a0-H1j" kind="relationship" relationship="viewControllers" id="myy-nZ-zuR"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WGG-xj-A8k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282" y="-502"/>
+        </scene>
+        <!--Total da Compra-->
+        <scene sceneID="31O-sH-qr0">
+            <objects>
+                <viewController id="AZj-a0-H1j" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Wy-xV-GQx"/>
+                        <viewControllerLayoutGuide type="bottom" id="h2u-IC-Tpa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="q3i-Lq-MGW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Total da Compra" image="totalcompra.png" id="Yf6-dg-eLk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KBg-sQ-C74" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-282" y="284"/>
+        </scene>
+        <!--Compras-->
+        <scene sceneID="Tcp-ZQ-I59">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ftp-xG-FnW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Compras" image="compras.png" selectedImage="compras.png" id="4Xg-HK-eXD"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Sfp-ia-Pgx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1OI-l7-Wfu" kind="relationship" relationship="rootViewController" id="MHE-EZ-Ipu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PuH-72-LPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="770" y="-502"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="compras.png" width="32" height="32"/>
+        <image name="settings.png" width="32" height="32"/>
+        <image name="totalcompra.png" width="32" height="32"/>
+    </resources>
+</document>
