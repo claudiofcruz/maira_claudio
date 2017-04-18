@@ -37,11 +37,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" rowHeight="100" id="QfG-mk-TPy" customClass="ProductTableViewCell" customModule="MOB12MairaRamos_ClaudioCruz" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" rowHeight="100" id="QfG-mk-TPy">
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QfG-mk-TPy" id="bjm-lu-fpK">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etX-kr-B6Y">
@@ -92,7 +92,7 @@
         <!--Cadastrar Produto-->
         <scene sceneID="x9X-bh-OhN">
             <objects>
-                <viewController title="Cadastrar Produto" id="rmQ-ua-c7u" customClass="ProductViewController" customModule="MOB12MairaRamos_ClaudioCruz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Cadastrar Produto" id="rmQ-ua-c7u" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HXv-80-vcG"/>
                         <viewControllerLayoutGuide type="bottom" id="diw-dh-CNg"/>
