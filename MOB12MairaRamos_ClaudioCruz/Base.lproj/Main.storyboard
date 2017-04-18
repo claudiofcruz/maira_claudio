@@ -31,13 +31,13 @@
         <!--Lista de Comras-->
         <scene sceneID="ODh-bM-yCa">
             <objects>
-                <tableViewController title="Lista de Comras" id="1OI-l7-Wfu" sceneMemberID="viewController">
+                <tableViewController title="Lista de Comras" id="1OI-l7-Wfu" customClass="ComprasTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="Aql-ie-fIP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" rowHeight="100" id="QfG-mk-TPy">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" rowHeight="100" id="QfG-mk-TPy" customClass="ProductTableViewCell" customModule="MOB12MairaRamos_ClaudioCruz" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QfG-mk-TPy" id="bjm-lu-fpK">
@@ -87,12 +87,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfY-oa-ssq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="-502.81690140845069"/>
+            <point key="canvasLocation" x="1770" y="-503.75"/>
         </scene>
         <!--Cadastrar Produto-->
         <scene sceneID="x9X-bh-OhN">
             <objects>
-                <viewController title="Cadastrar Produto" id="rmQ-ua-c7u" sceneMemberID="viewController">
+                <viewController title="Cadastrar Produto" id="rmQ-ua-c7u" customClass="ProductViewController" customModule="MOB12MairaRamos_ClaudioCruz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HXv-80-vcG"/>
                         <viewControllerLayoutGuide type="bottom" id="diw-dh-CNg"/>
