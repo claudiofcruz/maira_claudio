@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Ajustes-->
         <scene sceneID="UDQ-Cu-ZMh">
             <objects>
                 <viewController id="mzk-KH-LIQ" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gaZ-NM-Vge"/>
+                    <navigationItem key="navigationItem" title="Ajustes" id="gaZ-NM-Vge"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWi-oK-1gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -51,7 +51,7 @@
                             <outlet property="delegate" destination="1OI-l7-Wfu" id="azc-0A-cSP"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="3Jg-X1-7yT">
+                    <navigationItem key="navigationItem" title="Lista de Compras" id="3Jg-X1-7yT">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="j4A-6h-mSi">
                             <connections>
                                 <segue destination="rmQ-ua-c7u" kind="show" id="AHy-0Q-CuS"/>
@@ -100,7 +100,7 @@
             </objects>
             <point key="canvasLocation" x="-282" y="-502"/>
         </scene>
-        <!--View Controller-->
+        <!--Total da Compra-->
         <scene sceneID="31O-sH-qr0">
             <objects>
                 <viewController id="AZj-a0-H1j" sceneMemberID="viewController">
@@ -113,7 +113,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="X1m-UK-UMk"/>
+                    <navigationItem key="navigationItem" title="Total da Compra" id="X1m-UK-UMk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBg-sQ-C74" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
