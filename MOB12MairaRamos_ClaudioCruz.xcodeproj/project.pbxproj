@@ -20,6 +20,7 @@
 		2DD22D501EA6806600C16DBC /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD22D4F1EA6806600C16DBC /* ProductTableViewCell.swift */; };
 		2DD22D531EA688EE00C16DBC /* UIViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD22D521EA688EE00C16DBC /* UIViewController+CoreData.swift */; };
 		2DD22D551EA68CC700C16DBC /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD22D541EA68CC700C16DBC /* ProductViewController.swift */; };
+		2DD22D591EA69D1200C16DBC /* gift.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DD22D581EA69D1200C16DBC /* gift.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		2DD22D4F1EA6806600C16DBC /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		2DD22D521EA688EE00C16DBC /* UIViewController+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreData.swift"; sourceTree = "<group>"; };
 		2DD22D541EA68CC700C16DBC /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
+		2DD22D581EA69D1200C16DBC /* gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gift.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		2D858C5A1EA2982100C7FA74 /* Imagens */ = {
 			isa = PBXGroup;
 			children = (
+				2DD22D581EA69D1200C16DBC /* gift.png */,
 				2D858C6B1EA2BB2900C7FA74 /* compras.png */,
 				2D858C671EA2B74500C7FA74 /* totalcompra.png */,
 				2D858C651EA299F000C7FA74 /* settings.png */,
@@ -169,6 +172,7 @@
 				2D858C4E1EA27E8E00C7FA74 /* Assets.xcassets in Resources */,
 				2D858C6C1EA2BB2900C7FA74 /* compras.png in Resources */,
 				2D858C491EA27E8E00C7FA74 /* Main.storyboard in Resources */,
+				2DD22D591EA69D1200C16DBC /* gift.png in Resources */,
 				2D858C681EA2B74500C7FA74 /* totalcompra.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
