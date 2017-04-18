@@ -31,7 +31,7 @@
         <!--Lista de Comras-->
         <scene sceneID="ODh-bM-yCa">
             <objects>
-                <tableViewController title="Lista de Comras" id="1OI-l7-Wfu" customClass="ComprasTableViewController" customModule="MOB12MairaRamos_ClaudioCruz" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Lista de Comras" id="1OI-l7-Wfu" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" id="Aql-ie-fIP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
