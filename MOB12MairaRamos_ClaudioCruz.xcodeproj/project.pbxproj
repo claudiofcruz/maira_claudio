@@ -16,6 +16,10 @@
 		2D858C661EA299F000C7FA74 /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D858C651EA299F000C7FA74 /* settings.png */; };
 		2D858C681EA2B74500C7FA74 /* totalcompra.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D858C671EA2B74500C7FA74 /* totalcompra.png */; };
 		2D858C6C1EA2BB2900C7FA74 /* compras.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D858C6B1EA2BB2900C7FA74 /* compras.png */; };
+		2DD22D4E1EA67C8500C16DBC /* ComprasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD22D4D1EA67C8500C16DBC /* ComprasTableViewController.swift */; };
+		2DD22D501EA6806600C16DBC /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD22D4F1EA6806600C16DBC /* ProductTableViewCell.swift */; };
+		2DD22D531EA688EE00C16DBC /* UIViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD22D521EA688EE00C16DBC /* UIViewController+CoreData.swift */; };
+		2DD22D551EA68CC700C16DBC /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD22D541EA68CC700C16DBC /* ProductViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		2D858C651EA299F000C7FA74 /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings.png; sourceTree = "<group>"; };
 		2D858C671EA2B74500C7FA74 /* totalcompra.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = totalcompra.png; sourceTree = "<group>"; };
 		2D858C6B1EA2BB2900C7FA74 /* compras.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = compras.png; sourceTree = "<group>"; };
+		2DD22D4D1EA67C8500C16DBC /* ComprasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComprasTableViewController.swift; sourceTree = "<group>"; };
+		2DD22D4F1EA6806600C16DBC /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
+		2DD22D521EA688EE00C16DBC /* UIViewController+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreData.swift"; sourceTree = "<group>"; };
+		2DD22D541EA68CC700C16DBC /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,7 @@
 		2D858C421EA27E8E00C7FA74 /* MOB12MairaRamos_ClaudioCruz */ = {
 			isa = PBXGroup;
 			children = (
+				2DD22D511EA680D400C16DBC /* Products */,
 				2D858C5A1EA2982100C7FA74 /* Imagens */,
 				2D858C431EA27E8E00C7FA74 /* AppDelegate.swift */,
 				2D858C451EA27E8E00C7FA74 /* ViewController.swift */,
@@ -70,6 +79,7 @@
 				2D858C4F1EA27E8E00C7FA74 /* LaunchScreen.storyboard */,
 				2D858C521EA27E8E00C7FA74 /* Info.plist */,
 				2D858C4A1EA27E8E00C7FA74 /* MOB12MairaRamos_ClaudioCruz.xcdatamodeld */,
+				2DD22D521EA688EE00C16DBC /* UIViewController+CoreData.swift */,
 			);
 			path = MOB12MairaRamos_ClaudioCruz;
 			sourceTree = "<group>";
@@ -82,6 +92,16 @@
 				2D858C651EA299F000C7FA74 /* settings.png */,
 			);
 			name = Imagens;
+			sourceTree = "<group>";
+		};
+		2DD22D511EA680D400C16DBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2DD22D4D1EA67C8500C16DBC /* ComprasTableViewController.swift */,
+				2DD22D4F1EA6806600C16DBC /* ProductTableViewCell.swift */,
+				2DD22D541EA68CC700C16DBC /* ProductViewController.swift */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +182,10 @@
 			files = (
 				2D858C461EA27E8E00C7FA74 /* ViewController.swift in Sources */,
 				2D858C441EA27E8E00C7FA74 /* AppDelegate.swift in Sources */,
+				2DD22D501EA6806600C16DBC /* ProductTableViewCell.swift in Sources */,
+				2DD22D551EA68CC700C16DBC /* ProductViewController.swift in Sources */,
+				2DD22D531EA688EE00C16DBC /* UIViewController+CoreData.swift in Sources */,
+				2DD22D4E1EA67C8500C16DBC /* ComprasTableViewController.swift in Sources */,
 				2D858C4C1EA27E8E00C7FA74 /* MOB12MairaRamos_ClaudioCruz.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -328,6 +352,7 @@
 				2D858C571EA27E8E00C7FA74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
