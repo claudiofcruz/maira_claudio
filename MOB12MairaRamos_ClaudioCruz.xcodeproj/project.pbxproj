@@ -139,7 +139,7 @@
 				TargetAttributes = {
 					2D858C3F1EA27E8E00C7FA74 = {
 						CreatedOnToolsVersion = 8.3.1;
-						DevelopmentTeam = B9NU94SKPM;
+						DevelopmentTeam = AW42LA4AGK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -315,7 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B9NU94SKPM;
+				DEVELOPMENT_TEAM = AW42LA4AGK;
 				INFOPLIST_FILE = MOB12MairaRamos_ClaudioCruz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FIap.MOB12MairaRamos-ClaudioCruz";
@@ -328,7 +328,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B9NU94SKPM;
+				DEVELOPMENT_TEAM = AW42LA4AGK;
 				INFOPLIST_FILE = MOB12MairaRamos_ClaudioCruz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FIap.MOB12MairaRamos-ClaudioCruz";
