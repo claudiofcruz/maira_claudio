@@ -147,6 +147,8 @@ class ProductViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
+    
 
     
     /*
