@@ -20,22 +20,41 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var swCard: UISwitch!
     
     // MARK: Properties
+    
     var product: Product!
     var smallImage: UIImage!
-    var fetchedResultController: NSFetchedResultsController<States>!
-
+    var dataSourceStates: [States] = []
+    var pickerStates: UIPickerView!
     
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pickerStates = UIPickerView()
         
-        // Do any additional setup after loading the view.
+        pickerStates.delegate = self
+        pickerStates.dataSource = self
+        
+        let toolBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 44))
+        
+        let btCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        
+        let btSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        
+        let btDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(done))
+        
+        toolBar.items = [btCancel,btSpace,btDone]
+        
+        tfState.inputView = pickerStates
+        tfState.inputAccessoryView = toolBar
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
+
         if self.product != nil {
             
             tfName.text = product.name
@@ -57,6 +76,10 @@ class ProductViewController: UIViewController {
     }
     
     // MARK: - Methods
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.becomeFirstResponder()
+    }
     
     @IBAction func addProduct(_ sender: UIButton) {
 
@@ -111,7 +134,7 @@ class ProductViewController: UIViewController {
     
     
     func checkAllFields() -> Bool {
-        
+        //TODO
         return false
     }
     
@@ -125,12 +148,11 @@ class ProductViewController: UIViewController {
     
     @IBAction func startEditingStates(_ sender: UITextField) {
         
-        //Verifica se possui estados cadastrados no momento de iniciar a edição do tfStates, caso negativo abre a tela de settings
         loadStates()
-        if let count = fetchedResultController.fetchedObjects?.count {
-            if count == 0 {
-                performSegue(withIdentifier: "settingsSegue", sender: nil)
-            }
+
+        //Verifica se possui estados cadastrados no momento de iniciar a edição do tfStates, caso negativo abre a tela de settings
+        if dataSourceStates.count == 0 {
+            performSegue(withIdentifier: "settingsSegue", sender: nil)
         }
     }
     
@@ -139,28 +161,23 @@ class ProductViewController: UIViewController {
         let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        fetchedResultController.delegate = self
         do {
-            try fetchedResultController.performFetch()
+            dataSourceStates = try context.fetch(fetchRequest)
+            //atualizar pickerView
         } catch {
             print(error.localizedDescription)
         }
     }
     
+    func cancel() {
+        tfState.resignFirstResponder()
+    }
     
+    func done() {
+        tfState.text = dataSourceStates[pickerStates.selectedRow(inComponent: 0)].name
+        cancel()
+    }
 
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 // MARK: - extension
@@ -177,7 +194,26 @@ extension ProductViewController:UIImagePickerControllerDelegate, UINavigationCon
     
 }
 
-extension ProductViewController:NSFetchedResultsControllerDelegate {
+extension ProductViewController: UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return dataSourceStates.count
+    }
+    
     
 }
 
+extension ProductViewController: UIPickerViewDelegate {
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return dataSourceStates[row].name
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        tfState.text = dataSourceStates[row].name
+    }
+}

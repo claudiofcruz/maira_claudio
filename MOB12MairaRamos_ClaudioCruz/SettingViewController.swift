@@ -26,7 +26,7 @@ class SettingViewController: UIViewController {
         case add
         case edit
     }
-    
+        
     var nameField: Bool = false
     var taxField: Bool = false
     
@@ -39,7 +39,6 @@ class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        tvStates.estimatedRowHeight = 106
         tvStates.rowHeight = UITableViewAutomaticDimension
         label = UILabel(frame: CGRect(x: tvStates.frame.origin.x,
                                       y: tvStates.frame.origin.y,
@@ -108,6 +107,8 @@ class SettingViewController: UIViewController {
         
         alert.addTextField { (textField: UITextField) in
             textField.placeholder = "Nome do estado"
+            textField.autocapitalizationType = .words
+            
             if let name = state?.name {
                 textField.text = name
             }
