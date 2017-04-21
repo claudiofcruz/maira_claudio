@@ -22,10 +22,14 @@ class ProductViewController: UIViewController {
     // MARK: Properties
     var product: Product!
     var smallImage: UIImage!
+    var fetchedResultController: NSFetchedResultsController<States>!
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -119,6 +123,32 @@ class ProductViewController: UIViewController {
         present(imagePicker, animated: true, completion: nil)
     }
     
+    @IBAction func startEditingStates(_ sender: UITextField) {
+        
+        //Verifica se possui estados cadastrados no momento de iniciar a edição do tfStates, caso negativo abre a tela de settings
+        loadStates()
+        if let count = fetchedResultController.fetchedObjects?.count {
+            if count == 0 {
+                performSegue(withIdentifier: "settingsSegue", sender: nil)
+            }
+        }
+    }
+    
+    func loadStates() {
+        let fetchRequest: NSFetchRequest<States> = States.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        
+        fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultController.delegate = self
+        do {
+            try fetchedResultController.performFetch()
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
+
+    
     /*
      // MARK: - Navigation
      
@@ -150,6 +180,10 @@ extension ProductViewController:UIImagePickerControllerDelegate, UINavigationCon
         
         dismiss(animated: true, completion: nil)
     }
+    
+}
+
+extension ProductViewController:NSFetchedResultsControllerDelegate {
     
 }
 

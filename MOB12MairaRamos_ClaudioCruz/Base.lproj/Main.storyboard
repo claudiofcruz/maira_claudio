@@ -26,7 +26,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWi-oK-1gu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="-1217.5412293853074"/>
+            <point key="canvasLocation" x="1718" y="284"/>
         </scene>
         <!--Lista de Comras-->
         <scene sceneID="ODh-bM-yCa">
@@ -87,7 +87,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfY-oa-ssq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1770" y="-503.75"/>
+            <point key="canvasLocation" x="1719" y="-1230"/>
         </scene>
         <!--Cadastrar Produto-->
         <scene sceneID="x9X-bh-OhN">
@@ -125,10 +125,16 @@
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="startEditingStates:" destination="rmQ-ua-c7u" eventType="touchDown" id="rSt-VP-ab2"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYY-uu-oyQ">
                                 <rect key="frame" x="282" y="320" width="22" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="mzk-KH-LIQ" kind="show" identifier="settingsSegue" id="pG6-DT-nrD"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wT9-vW-MNH">
                                 <rect key="frame" x="255" y="354" width="51" height="31"/>
@@ -172,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaA-Zc-tpG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1768.125" y="282.5"/>
+            <point key="canvasLocation" x="1718" y="-503"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="jZR-MT-kkv">
@@ -229,7 +235,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuH-72-LPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="770" y="-502"/>
+            <point key="canvasLocation" x="769" y="-1229"/>
         </scene>
         <!--Total da Compra-->
         <scene sceneID="TY9-GO-juX">
@@ -267,7 +273,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VQR-Wa-8GH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="768.79999999999995" y="-1217.5412293853074"/>
+            <point key="canvasLocation" x="769" y="-503"/>
         </scene>
     </scenes>
     <resources>
@@ -276,4 +282,7 @@
         <image name="settings.png" width="32" height="32"/>
         <image name="totalcompra.png" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="pG6-DT-nrD"/>
+    </inferredMetricsTieBreakers>
 </document>
