@@ -29,6 +29,9 @@
                                     <constraint firstAttribute="width" constant="138" id="ghg-9F-7Ae"/>
                                 </constraints>
                                 <state key="normal" title="Adicionar estado"/>
+                                <connections>
+                                    <action selector="addState:" destination="mzk-KH-LIQ" eventType="touchUpInside" id="ak6-5k-6Ft"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rVb-w3-YDS">
                                 <rect key="frame" x="161.5" y="72" width="142.5" height="30"/>
@@ -88,7 +91,7 @@
                                 <rect key="frame" x="0.0" y="177" width="320" height="208"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellEstado" textLabel="4Kw-ge-AKp" detailTextLabel="5Vu-Hk-ADT" style="IBUITableViewCellStyleValue1" id="flZ-Kx-Yn1">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellState" textLabel="4Kw-ge-AKp" detailTextLabel="5Vu-Hk-ADT" style="IBUITableViewCellStyleValue1" id="flZ-Kx-Yn1">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="flZ-Kx-Yn1" id="NXs-2V-PWE">
@@ -114,23 +117,11 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="mzk-KH-LIQ" id="chi-mz-B6H"/>
+                                    <outlet property="delegate" destination="mzk-KH-LIQ" id="aUH-vP-GnO"/>
+                                </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pp6-ha-mPL">
-                                <rect key="frame" x="31" y="192" width="258" height="184"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lista de estados vazia." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7T2-a8-neT">
-                                        <rect key="frame" x="41" y="82" width="177" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="7T2-a8-neT" firstAttribute="centerY" secondItem="Pp6-ha-mPL" secondAttribute="centerY" id="6gu-bA-IVC"/>
-                                    <constraint firstItem="7T2-a8-neT" firstAttribute="centerX" secondItem="Pp6-ha-mPL" secondAttribute="centerX" id="O2A-fj-u8N"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -141,7 +132,6 @@
                             <constraint firstItem="08u-T6-8tt" firstAttribute="leading" secondItem="hLe-6R-jgI" secondAttribute="leadingMargin" id="9Ak-vC-52d"/>
                             <constraint firstItem="rFi-Yg-2sK" firstAttribute="trailing" secondItem="hLe-6R-jgI" secondAttribute="trailingMargin" id="9PW-qk-BP8"/>
                             <constraint firstItem="OsP-k4-nQx" firstAttribute="top" secondItem="08u-T6-8tt" secondAttribute="bottom" constant="17" id="B2T-lL-rjx"/>
-                            <constraint firstItem="Pp6-ha-mPL" firstAttribute="leading" secondItem="hLe-6R-jgI" secondAttribute="leadingMargin" constant="15" id="CqJ-Lf-HWP"/>
                             <constraint firstItem="iIM-R5-rjU" firstAttribute="top" secondItem="rVb-w3-YDS" secondAttribute="bottom" constant="8" id="EJ2-Fs-msa"/>
                             <constraint firstItem="cLr-d9-Ot7" firstAttribute="top" secondItem="iIM-R5-rjU" secondAttribute="bottom" constant="8" id="Hbf-l5-btJ"/>
                             <constraint firstItem="iIM-R5-rjU" firstAttribute="top" secondItem="rVb-w3-YDS" secondAttribute="bottom" constant="8" id="Tds-Yl-VU5"/>
@@ -149,14 +139,11 @@
                             <constraint firstItem="OsP-k4-nQx" firstAttribute="leading" secondItem="hLe-6R-jgI" secondAttribute="leadingMargin" id="WLg-Rc-o48"/>
                             <constraint firstItem="08u-T6-8tt" firstAttribute="top" secondItem="Hbp-aA-rl0" secondAttribute="bottom" constant="13" id="XKo-vf-ZFX"/>
                             <constraint firstItem="rVb-w3-YDS" firstAttribute="trailing" secondItem="hLe-6R-jgI" secondAttribute="trailingMargin" id="Xas-qd-KlY"/>
-                            <constraint firstItem="rFi-Yg-2sK" firstAttribute="top" secondItem="Pp6-ha-mPL" secondAttribute="bottom" constant="17" id="aEw-qm-NVN"/>
                             <constraint firstItem="rVb-w3-YDS" firstAttribute="top" secondItem="Hbp-aA-rl0" secondAttribute="bottom" constant="8" id="be3-6a-0rE"/>
                             <constraint firstItem="R35-DX-auR" firstAttribute="top" secondItem="cLr-d9-Ot7" secondAttribute="bottom" constant="8" id="eQx-bf-fAS"/>
                             <constraint firstItem="iIM-R5-rjU" firstAttribute="width" secondItem="rVb-w3-YDS" secondAttribute="width" id="epG-j1-BfP"/>
                             <constraint firstItem="iIM-R5-rjU" firstAttribute="trailing" secondItem="hLe-6R-jgI" secondAttribute="trailingMargin" id="hA1-y2-0z6"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Pp6-ha-mPL" secondAttribute="trailing" constant="15" id="hK5-wq-nGk"/>
                             <constraint firstAttribute="trailing" secondItem="R35-DX-auR" secondAttribute="trailing" id="j53-RN-cMD"/>
-                            <constraint firstItem="Pp6-ha-mPL" firstAttribute="top" secondItem="cLr-d9-Ot7" secondAttribute="bottom" constant="23" id="lle-zf-DfK"/>
                             <constraint firstItem="rIz-N1-FVf" firstAttribute="top" secondItem="rFi-Yg-2sK" secondAttribute="bottom" constant="8" id="msX-Eq-SKb"/>
                             <constraint firstItem="rVb-w3-YDS" firstAttribute="leading" secondItem="08u-T6-8tt" secondAttribute="trailing" constant="8" id="p0W-iR-nwn"/>
                             <constraint firstItem="R35-DX-auR" firstAttribute="leading" secondItem="hLe-6R-jgI" secondAttribute="leading" id="tLA-8a-dhh"/>
@@ -166,6 +153,7 @@
                     <connections>
                         <outlet property="tfDolar" destination="rVb-w3-YDS" id="1it-ai-WkV"/>
                         <outlet property="tfIOF" destination="iIM-R5-rjU" id="mKl-ic-dgL"/>
+                        <outlet property="tvStates" destination="R35-DX-auR" id="Rcm-3y-7m2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWi-oK-1gu" userLabel="First Responder" sceneMemberID="firstResponder"/>

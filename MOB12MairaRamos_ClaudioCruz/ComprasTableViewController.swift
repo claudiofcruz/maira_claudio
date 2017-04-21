@@ -28,7 +28,6 @@ class ComprasTableViewController: UITableViewController {
         label.textAlignment = .center
         label.textColor = .black
         
-        //Temporary
         tableView.backgroundView = label
         
         loadProducts()
