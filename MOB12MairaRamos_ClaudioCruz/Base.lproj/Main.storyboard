@@ -111,7 +111,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift.png" translatesAutoresizingMaskIntoConstraints="NO" id="BEP-DN-v0G">
+                            <imageView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift.png" translatesAutoresizingMaskIntoConstraints="NO" id="BEP-DN-v0G">
                                 <rect key="frame" x="16" y="110" width="288" height="202"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="202" id="h0u-dv-4lP"/>
@@ -324,7 +324,7 @@
     </scenes>
     <resources>
         <image name="compras.png" width="32" height="32"/>
-        <image name="gift.png" width="286" height="286"/>
+        <image name="gift.png" width="240" height="171"/>
         <image name="settings.png" width="32" height="32"/>
         <image name="totalcompra.png" width="32" height="32"/>
     </resources>

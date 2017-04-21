@@ -167,14 +167,6 @@ extension ProductViewController:UIImagePickerControllerDelegate, UINavigationCon
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         
-//        //Como reduzir uma imagem
-//        let smallSize = CGSize(width: ivImage.frame.width, height: ivImage.frame.height )
-//        UIGraphicsBeginImageContext(smallSize)
-//        image.draw(in: CGRect(x: 0, y: 0, width: smallSize.width, height: smallSize.height))
-//        smallImage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-        
-//        ivImage.image = smallImage
         smallImage = image
         ivImage.image = smallImage
         
