@@ -35,10 +35,6 @@ class ComprasTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        loadProducts()
-    }
-    
     // MARK: - Methods
     
     func loadProducts() {
@@ -107,7 +103,11 @@ class ComprasTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let vc = segue.destination as? ProductViewController {
             if let selected = tableView.indexPathForSelectedRow {
-                vc.product = fetchedResultController.object(at: selected)
+                if sender is UIBarButtonItem {
+                    vc.product = nil
+                } else {
+                    vc.product = fetchedResultController.object(at: selected)
+                }
             }
         }
     }

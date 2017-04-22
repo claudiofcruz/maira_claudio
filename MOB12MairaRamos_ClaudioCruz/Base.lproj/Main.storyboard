@@ -291,13 +291,13 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwf-U9-Gx5">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gwf-U9-Gx5">
                                 <rect key="frame" x="16" y="393" width="288" height="30"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Dcu-kv-0b6"/>
                                 </constraints>
-                                <state key="normal" title="CADASTRAR">
+                                <state key="normal">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
@@ -347,6 +347,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btSave" destination="gwf-U9-Gx5" id="vGR-GA-HcN"/>
                         <outlet property="ivImage" destination="BEP-DN-v0G" id="tpC-4e-zWw"/>
                         <outlet property="swCard" destination="wT9-vW-MNH" id="Q1n-xA-9d9"/>
                         <outlet property="tfName" destination="bRn-bx-vIa" id="XBG-Us-N3t"/>

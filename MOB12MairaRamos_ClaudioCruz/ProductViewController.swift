@@ -18,6 +18,7 @@ class ProductViewController: UIViewController {
     @IBOutlet weak var tfState: UITextField!
     @IBOutlet weak var tfPrice: UITextField!
     @IBOutlet weak var swCard: UISwitch!
+    @IBOutlet weak var btSave: UIButton!
     
     // MARK: Properties
     
@@ -71,6 +72,9 @@ class ProductViewController: UIViewController {
             tfPrice.text = "\(product.price)"
             swCard.isOn = product.iscreditpaid
             
+            btSave.setTitle("ATUALIZAR", for: .normal)
+        } else {
+            btSave.setTitle("CADASTRAR", for: .normal)
         }
     }
     
@@ -143,6 +147,11 @@ class ProductViewController: UIViewController {
     func checkAllFields() -> Bool {
         if tfName.text == "" {
             showAlert(message: "Favor informar o nome do produto!")
+            return false
+        }
+        
+        if smallImage == nil {
+            showAlert(message: "Favor escolher uma imagem!")
             return false
         }
         
