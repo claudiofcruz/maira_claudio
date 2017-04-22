@@ -26,6 +26,7 @@ class ComprasTableViewController: UITableViewController {
         label.textColor = .black
         
         tableView.backgroundView = label
+        tableView.separatorStyle = .none
         
         loadProducts()
 
@@ -48,6 +49,7 @@ class ComprasTableViewController: UITableViewController {
         
         do {
             try fetchedResultController.performFetch()
+            appDelegate.productList = fetchedResultController.fetchedObjects!
         } catch {
             print(error.localizedDescription)
         }
@@ -63,9 +65,11 @@ class ComprasTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = fetchedResultController.fetchedObjects?.count {
             tableView.backgroundView = (count == 0) ? label : nil
+            tableView.separatorStyle = (count == 0) ? .none : .singleLine
             return count
         } else {
             tableView.backgroundView = label
+            tableView.separatorStyle = .none
             return 0
         }
     }
@@ -76,7 +80,8 @@ class ComprasTableViewController: UITableViewController {
         let product = fetchedResultController.object(at: indexPath)
         
         cell.lbName.text = product.name
-        cell.lbPrice.text = "USD$: \(product.price)"
+        
+        cell.lbPrice.text = "USD$: \(String(format: "%.2f", product.price))"
         
         if let image = product.image as? UIImage {
             cell.ivProduct.image = image
@@ -118,6 +123,7 @@ class ComprasTableViewController: UITableViewController {
 extension ComprasTableViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
+        appDelegate.productList = controller.fetchedObjects as! [Product]
     }
 }
 

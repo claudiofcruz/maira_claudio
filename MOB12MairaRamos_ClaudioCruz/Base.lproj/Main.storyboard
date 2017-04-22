@@ -164,16 +164,16 @@
         <scene sceneID="ODh-bM-yCa">
             <objects>
                 <tableViewController title="Lista de Comras" id="1OI-l7-Wfu" customClass="ComprasTableViewController" customModule="MOB12MairaRamos_ClaudioCruz" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="96" sectionHeaderHeight="28" sectionFooterHeight="28" id="Aql-ie-fIP">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" id="Aql-ie-fIP">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" rowHeight="96" id="QfG-mk-TPy" customClass="ProductTableViewCell" customModule="MOB12MairaRamos_ClaudioCruz" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="96"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" rowHeight="92" id="QfG-mk-TPy" customClass="ProductTableViewCell" customModule="MOB12MairaRamos_ClaudioCruz" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="92"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QfG-mk-TPy" id="bjm-lu-fpK">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="96"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="91.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="etX-kr-B6Y">
@@ -381,7 +381,7 @@
         <!--Total da Compra-->
         <scene sceneID="31O-sH-qr0">
             <objects>
-                <viewController id="AZj-a0-H1j" sceneMemberID="viewController">
+                <viewController id="AZj-a0-H1j" customClass="TotalViewController" customModule="MOB12MairaRamos_ClaudioCruz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Wy-xV-GQx"/>
                         <viewControllerLayoutGuide type="bottom" id="h2u-IC-Tpa"/>
@@ -389,13 +389,68 @@
                     <view key="view" contentMode="scaleToFill" id="q3i-Lq-MGW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total em US$:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Il-Wr-Q6F">
+                                <rect key="frame" x="106" y="110" width="108" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVB-9h-Ufp">
+                                <rect key="frame" x="129.5" y="139" width="61" height="32.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32.5" id="Tfr-Ca-HR1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" red="1" green="0.15182642060000001" blue="0.18120814199999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total em R$:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gRS-YB-6rY">
+                                <rect key="frame" x="106" y="230" width="108" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="C3t-g9-cZq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGG-pS-L77">
+                                <rect key="frame" x="129.5" y="259" width="61" height="32.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32.5" id="aqy-VY-Wlz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="27"/>
+                                <color key="textColor" red="0.25098040700000002" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9Il-Wr-Q6F" firstAttribute="centerX" secondItem="q3i-Lq-MGW" secondAttribute="centerX" id="102-9Y-Xel"/>
+                            <constraint firstItem="gRS-YB-6rY" firstAttribute="centerY" secondItem="q3i-Lq-MGW" secondAttribute="centerY" id="11u-eb-xaI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9Il-Wr-Q6F" secondAttribute="trailing" constant="90" id="J2M-fW-4jo"/>
+                            <constraint firstItem="iVB-9h-Ufp" firstAttribute="top" secondItem="9Il-Wr-Q6F" secondAttribute="bottom" constant="8" id="Kif-0Q-UcS"/>
+                            <constraint firstItem="9Il-Wr-Q6F" firstAttribute="top" secondItem="7Wy-xV-GQx" secondAttribute="bottom" constant="46" id="LWL-NT-Mp8"/>
+                            <constraint firstItem="9Il-Wr-Q6F" firstAttribute="leading" secondItem="q3i-Lq-MGW" secondAttribute="leadingMargin" constant="90" id="NSG-vP-sdI"/>
+                            <constraint firstItem="gRS-YB-6rY" firstAttribute="centerX" secondItem="q3i-Lq-MGW" secondAttribute="centerX" id="QZA-DQ-vYc"/>
+                            <constraint firstItem="gRS-YB-6rY" firstAttribute="leading" secondItem="q3i-Lq-MGW" secondAttribute="leadingMargin" constant="90" id="edR-y7-BXI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gRS-YB-6rY" secondAttribute="trailing" constant="90" id="fh6-gx-4sK"/>
+                            <constraint firstItem="iVB-9h-Ufp" firstAttribute="centerX" secondItem="q3i-Lq-MGW" secondAttribute="centerX" id="kwP-tx-KVP"/>
+                            <constraint firstItem="vGG-pS-L77" firstAttribute="top" secondItem="gRS-YB-6rY" secondAttribute="bottom" constant="8" id="us4-nX-2tt"/>
+                            <constraint firstItem="iVB-9h-Ufp" firstAttribute="top" secondItem="9Il-Wr-Q6F" secondAttribute="bottom" constant="8" id="wcL-VL-mOD"/>
+                            <constraint firstItem="vGG-pS-L77" firstAttribute="centerX" secondItem="q3i-Lq-MGW" secondAttribute="centerX" id="yK4-iz-q3N"/>
+                            <constraint firstItem="vGG-pS-L77" firstAttribute="top" secondItem="gRS-YB-6rY" secondAttribute="bottom" constant="8" id="ykp-vl-aL5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Total da Compra" id="X1m-UK-UMk"/>
+                    <connections>
+                        <outlet property="lbDolar" destination="iVB-9h-Ufp" id="dYa-T5-YGE"/>
+                        <outlet property="lbReais" destination="vGG-pS-L77" id="w3j-YV-bSi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KBg-sQ-C74" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="769" y="284"/>
+            <point key="canvasLocation" x="768.75" y="283.75"/>
         </scene>
         <!--Compras-->
         <scene sceneID="Tcp-ZQ-I59">

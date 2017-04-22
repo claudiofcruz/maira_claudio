@@ -69,7 +69,7 @@ class ProductViewController: UIViewController {
             stateSelected = product.state
             tfState.text = stateSelected.name
             
-            tfPrice.text = "\(product.price)"
+            tfPrice.text = String(format: "%.2f", product.price)
             swCard.isOn = product.iscreditpaid
             
             btSave.setTitle("ATUALIZAR", for: .normal)
@@ -209,6 +209,9 @@ class ProductViewController: UIViewController {
     }
     
     func done() {
+        if stateSelected == nil {
+            stateSelected = dataSourceStates[0]
+        }
         tfState.text = stateSelected.name
         cancel()
     }
@@ -252,4 +255,6 @@ extension ProductViewController: UIPickerViewDelegate {
         stateSelected = dataSourceStates[row]
         tfState.text = stateSelected.name
     }
+    
+    
 }

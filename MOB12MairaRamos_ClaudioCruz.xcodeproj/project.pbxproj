@@ -19,6 +19,7 @@
 		2DBCF1EF1EAA654400D77391 /* gift.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBCF1EE1EAA654400D77391 /* gift.png */; };
 		2DBCF1F41EAA85E400D77391 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBCF1F31EAA85E400D77391 /* SettingViewController.swift */; };
 		2DBCF1F61EAA95B300D77391 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 2DBCF1F51EAA95B300D77391 /* Settings.bundle */; };
+		2DBCF1F81EABAFE300D77391 /* TotalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DBCF1F71EABAFE300D77391 /* TotalViewController.swift */; };
 		2DD22D4E1EA67C8500C16DBC /* ComprasTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD22D4D1EA67C8500C16DBC /* ComprasTableViewController.swift */; };
 		2DD22D501EA6806600C16DBC /* ProductTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD22D4F1EA6806600C16DBC /* ProductTableViewCell.swift */; };
 		2DD22D531EA688EE00C16DBC /* UIViewController+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD22D521EA688EE00C16DBC /* UIViewController+CoreData.swift */; };
@@ -40,6 +41,7 @@
 		2DBCF1EE1EAA654400D77391 /* gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gift.png; sourceTree = "<group>"; };
 		2DBCF1F31EAA85E400D77391 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		2DBCF1F51EAA95B300D77391 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
+		2DBCF1F71EABAFE300D77391 /* TotalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TotalViewController.swift; sourceTree = "<group>"; };
 		2DD22D4D1EA67C8500C16DBC /* ComprasTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComprasTableViewController.swift; sourceTree = "<group>"; };
 		2DD22D4F1EA6806600C16DBC /* ProductTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductTableViewCell.swift; sourceTree = "<group>"; };
 		2DD22D521EA688EE00C16DBC /* UIViewController+CoreData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+CoreData.swift"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				2DD22D4D1EA67C8500C16DBC /* ComprasTableViewController.swift */,
 				2DD22D4F1EA6806600C16DBC /* ProductTableViewCell.swift */,
 				2DD22D541EA68CC700C16DBC /* ProductViewController.swift */,
+				2DBCF1F71EABAFE300D77391 /* TotalViewController.swift */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -207,6 +210,7 @@
 				2DD22D531EA688EE00C16DBC /* UIViewController+CoreData.swift in Sources */,
 				2DD22D4E1EA67C8500C16DBC /* ComprasTableViewController.swift in Sources */,
 				2D858C4C1EA27E8E00C7FA74 /* MOB12MairaRamos_ClaudioCruz.xcdatamodeld in Sources */,
+				2DBCF1F81EABAFE300D77391 /* TotalViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
