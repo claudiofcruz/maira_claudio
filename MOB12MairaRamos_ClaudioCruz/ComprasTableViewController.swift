@@ -16,13 +16,10 @@ class ComprasTableViewController: UITableViewController {
 
     var label: UILabel!
     var fetchedResultController: NSFetchedResultsController<Product>!
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.estimatedRowHeight = 106
-        tableView.rowHeight = UITableViewAutomaticDimension
         label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 22))
         label.text = "Sem Produtos Cadastrados"
         label.textAlignment = .center
@@ -36,7 +33,10 @@ class ComprasTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        loadProducts()
     }
     
     // MARK: - Methods
@@ -49,6 +49,7 @@ class ComprasTableViewController: UITableViewController {
         
         fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         fetchedResultController.delegate = self
+        
         do {
             try fetchedResultController.performFetch()
         } catch {
@@ -79,7 +80,7 @@ class ComprasTableViewController: UITableViewController {
         let product = fetchedResultController.object(at: indexPath)
         
         cell.lbName.text = product.name
-        cell.lbPrice.text = "\(product.price)"
+        cell.lbPrice.text = "USD$: \(product.price)"
         
         if let image = product.image as? UIImage {
             cell.ivProduct.image = image
@@ -87,9 +88,10 @@ class ComprasTableViewController: UITableViewController {
         return cell
     }
     
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
             let product = fetchedResultController.object(at: indexPath)
             context.delete(product)
             do {
@@ -104,18 +106,17 @@ class ComprasTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? ProductViewController {
-            if let selected = tableView.indexPathForSelectedRow {
-                vc.product = fetchedResultController.object(at: selected)
-            }
-        }
+//        if let vc = segue.destination as? ProductViewController {
+//            if let selected = tableView.indexPathForSelectedRow {
+//                vc.product = dataSourceProducts[selected.row]
+//            }
+//        }
     }
 
 }
 
 // MARK: - Extensions
-
-extension ComprasTableViewController:NSFetchedResultsControllerDelegate {
+extension ComprasTableViewController: NSFetchedResultsControllerDelegate {
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.reloadData()
     }

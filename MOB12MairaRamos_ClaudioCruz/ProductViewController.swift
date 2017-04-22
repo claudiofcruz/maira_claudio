@@ -25,6 +25,7 @@ class ProductViewController: UIViewController {
     var smallImage: UIImage!
     var dataSourceStates: [States] = []
     var pickerStates: UIPickerView!
+    var stateSelected: States!
     
     override var canBecomeFirstResponder: Bool {
         return true
@@ -60,10 +61,13 @@ class ProductViewController: UIViewController {
             tfName.text = product.name
             
             if product.image != nil {
-                ivImage.image = product.image as? UIImage
+                smallImage = product.image as? UIImage
+                ivImage.image = smallImage
             }
             
-            tfState.text = product.state!.name
+            stateSelected = product.state
+            tfState.text = stateSelected.name
+            
             tfPrice.text = "\(product.price)"
             swCard.isOn = product.iscreditpaid
             
@@ -81,20 +85,23 @@ class ProductViewController: UIViewController {
         self.becomeFirstResponder()
     }
     
+  
     @IBAction func addProduct(_ sender: UIButton) {
 
         if checkAllFields() {
+            tfState.resignFirstResponder()
 
             if product == nil {
                 product = Product(context: context)
             }
             
-            
             product.name = tfName.text
-            product.price = Double(tfPrice.text!)!
+            product.price = Double(tfPrice.text!.replacingOccurrences(of: ",", with: "."))!
             product.iscreditpaid = swCard.isOn
-            product.state?.name = tfState.text
+            product.state = stateSelected
             
+            
+          
             if smallImage != nil {
                 product.image = ivImage.image
             }
@@ -102,11 +109,11 @@ class ProductViewController: UIViewController {
             do {
                 try context.save()
             } catch {
-                print(error.localizedDescription)
+                print("Erro na gravação \(error.localizedDescription)")
             }
-            
+            navigationController?.popViewController(animated: true)
             dismiss(animated: true, completion: nil)
-        }
+        }        
     }
     
     @IBAction func changeImage(_ sender: UIButton) {
@@ -134,10 +141,30 @@ class ProductViewController: UIViewController {
     
     
     func checkAllFields() -> Bool {
-        //TODO
-        return false
+        if tfName.text == "" {
+            showAlert(message: "Favor informar o nome do produto!")
+            return false
+        }
+        
+        if tfState.text == "" || stateSelected == nil {
+            showAlert(message: "Favor selecionar o Estado!")
+            return false
+        }
+        
+        if tfPrice.text == "" {
+            showAlert(message: "Favor informa o valor!")
+            return false
+        }
+        
+        return true
+
     }
     
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Campo obrigatório", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     func selectPicture(sourceType: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
@@ -163,7 +190,6 @@ class ProductViewController: UIViewController {
         
         do {
             dataSourceStates = try context.fetch(fetchRequest)
-            //atualizar pickerView
         } catch {
             print(error.localizedDescription)
         }
@@ -174,7 +200,7 @@ class ProductViewController: UIViewController {
     }
     
     func done() {
-        tfState.text = dataSourceStates[pickerStates.selectedRow(inComponent: 0)].name
+        tfState.text = stateSelected.name
         cancel()
     }
 
@@ -214,6 +240,7 @@ extension ProductViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        tfState.text = dataSourceStates[row].name
+        stateSelected = dataSourceStates[row]
+        tfState.text = stateSelected.name
     }
 }

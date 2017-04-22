@@ -200,9 +200,16 @@ extension SettingViewController: UITableViewDataSource {
         let deleteAction = UITableViewRowAction(style: .destructive, title: "Excluir") { (action: UITableViewRowAction, indexPath: IndexPath) in
             let state = self.dataSource[indexPath.row]
             self.context.delete(state)
-            try! self.context.save()
-            self.dataSource.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            do {
+                try self.context.save()
+                self.dataSource.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            } catch {
+                let alert = UIAlertController(title: "Exclusão não permitida", message: "Há produtos associados ao estado.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
         
         let editAction = UITableViewRowAction(style: .normal, title: "Editar") { (action: UITableViewRowAction, indexPath: IndexPath) in

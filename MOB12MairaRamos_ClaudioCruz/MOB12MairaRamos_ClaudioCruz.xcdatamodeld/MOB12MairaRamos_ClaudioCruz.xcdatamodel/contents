@@ -10,10 +10,10 @@
     <entity name="States" representedClassName="States" syncable="YES" codeGenerationType="class">
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="tax" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="products" optional="YES" maxCount="1" deletionRule="Deny" destinationEntity="Product" inverseName="state" inverseEntity="Product" syncable="YES"/>
+        <relationship name="products" optional="YES" toMany="YES" deletionRule="Deny" destinationEntity="Product" inverseName="state" inverseEntity="Product" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Product" positionX="-306" positionY="-12" width="128" height="120"/>
-        <element name="States" positionX="-54" positionY="18" width="128" height="90"/>
+        <element name="Product" positionX="-306" positionY="-12" width="128" height="118"/>
+        <element name="States" positionX="-54" positionY="18" width="128" height="88"/>
     </elements>
 </model>
