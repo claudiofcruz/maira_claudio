@@ -174,7 +174,9 @@ class SettingViewController: UIViewController {
 // MARK: - Extension
 
 extension SettingViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.becomeFirstResponder()
+    }
 }
 
 extension SettingViewController: UITableViewDataSource {
@@ -221,4 +223,6 @@ extension SettingViewController: UITableViewDataSource {
         
         return [editAction, deleteAction]
     }
+    
+    
 }
