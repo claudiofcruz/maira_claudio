@@ -88,7 +88,6 @@ class ComprasTableViewController: UITableViewController {
         return cell
     }
     
-
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             
@@ -106,11 +105,11 @@ class ComprasTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if let vc = segue.destination as? ProductViewController {
-//            if let selected = tableView.indexPathForSelectedRow {
-//                vc.product = dataSourceProducts[selected.row]
-//            }
-//        }
+        if let vc = segue.destination as? ProductViewController {
+            if let selected = tableView.indexPathForSelectedRow {
+                vc.product = fetchedResultController.object(at: selected)
+            }
+        }
     }
 
 }

@@ -201,6 +201,7 @@
                                     <outlet property="ivProduct" destination="etX-kr-B6Y" id="2wY-kp-mz1"/>
                                     <outlet property="lbName" destination="EfF-sW-d1w" id="wCe-4Z-tVA"/>
                                     <outlet property="lbPrice" destination="5lY-sU-rkl" id="vrw-bf-ttD"/>
+                                    <segue destination="rmQ-ua-c7u" kind="show" id="bUo-gd-RJ7"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -212,7 +213,7 @@
                     <navigationItem key="navigationItem" title="Lista de Compras" id="3Jg-X1-7yT">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="j4A-6h-mSi">
                             <connections>
-                                <segue destination="rmQ-ua-c7u" kind="show" id="AHy-0Q-CuS"/>
+                                <segue destination="rmQ-ua-c7u" kind="show" identifier="" id="AHy-0Q-CuS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -224,7 +225,7 @@
         <!--Cadastrar Produto-->
         <scene sceneID="x9X-bh-OhN">
             <objects>
-                <viewController title="Cadastrar Produto" id="rmQ-ua-c7u" customClass="ProductViewController" customModule="MOB12MairaRamos_ClaudioCruz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addUpdateProduct" title="Cadastrar Produto" id="rmQ-ua-c7u" customClass="ProductViewController" customModule="MOB12MairaRamos_ClaudioCruz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HXv-80-vcG"/>
                         <viewControllerLayoutGuide type="bottom" id="diw-dh-CNg"/>
@@ -460,6 +461,7 @@
         <image name="totalcompra.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="AHy-0Q-CuS"/>
         <segue reference="pG6-DT-nrD"/>
     </inferredMetricsTieBreakers>
 </document>
